@@ -4,8 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.teamSupport.allSport.UserMapper">
-    <select id="findAllUser" resultType="com.teamSupport.allSport.User">
+    <select id="findAllUsers" resultType="com.teamSupport.allSport.User">
         SELECT * FROM user;
     </select>
+
+    <select id="getUser" parameterType="String" resultType="com.teamSupport.allSport.User">
+        SELECT * FROM user WHERE user_key = #{user_key}
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO user VALUES (#{user_key}, #{nickname})
+    </insert>
 </mapper>
 
