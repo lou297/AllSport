@@ -1,4 +1,4 @@
-package com.teamSupport.allSport;
+package com.teamSupport.allSport.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

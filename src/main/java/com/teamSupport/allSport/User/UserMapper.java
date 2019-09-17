@@ -1,4 +1,4 @@
-package com.teamSupport.allSport;
+package com.teamSupport.allSport.User;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

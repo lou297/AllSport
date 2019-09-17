@@ -1,4 +1,4 @@
-package com.teamSupport.allSport;
+package com.teamSupport.allSport.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,13 +10,6 @@ public class UserController {
 
     @Autowired
     UserMapper userMapper;
-
-    @RequestMapping(path = "/user")
-    public String hello() {
-        System.out.println("test");
-        User user = new User("te123st", "Tset");
-        return  user.getUser_key();
-    }
 
     @RequestMapping(path = "/users", method = RequestMethod.GET)
     public @ResponseBody List<User> getAllUsers() {
