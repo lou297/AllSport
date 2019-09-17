@@ -9,8 +9,12 @@
         SELECT * FROM post
     </select>
 
-    <select id="findPostById" parameterType="int" resultType="com.teamSupport.allSport.Post.Post">
+    <select id="findPostByPostId" parameterType="int" resultType="com.teamSupport.allSport.Post.Post">
         SELECT * FROM post WHERE post_id = #{post_id}
+    </select>
+
+    <select id="findPostByGameId" parameterType="int" resultType="com.teamSupport.allSport.Post.Post">
+        SELECT * FROM post WHERE game_id = #{game_id}
     </select>
 
     <select id="findPostByKind" parameterType="String" resultType="com.teamSupport.allSport.Post.Post">
@@ -18,7 +22,7 @@
     </select>
 
     <insert id="uploadPost">
-        INSERT INTO post VALUES(#{post_id}, #{post_date}, #{writer_nickname}, #{kind}, #{title}, #{contents})
+        INSERT INTO post VALUES(#{post_id}, #{game_id}, #{post_date}, #{writer_nickname}, #{kind}, #{title}, #{contents})
     </insert>
 
 </mapper>

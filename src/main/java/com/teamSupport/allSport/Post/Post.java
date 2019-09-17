@@ -16,6 +16,7 @@ import java.util.List;
 public class Post {
     @Id
     private int post_id;
+    private int game_id;
     private long post_date;
     private String writer_nickname;
     private String kind;

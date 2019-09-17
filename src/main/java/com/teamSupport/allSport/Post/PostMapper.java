@@ -10,9 +10,11 @@ import java.util.List;
 @Repository
 interface PostMapper {
     List<Post> getAllPost();
-    List<Post> findPostById(int post_id);
+    List<Post> findPostByPostId(int post_id);
+    List<Post> findPostByGameId(int game_id);
     List<Post> findPostByKind(String kind);
-    void uploadPost(@Param(value = "post_id") int postId, @Param(value = "post_date") long postDate,
+    void uploadPost(@Param(value = "post_id") int postId, @Param(value = "game_id") int gameId,
+                    @Param(value = "post_date") long postDate,
                     @Param(value = "writer_nickname") String writerNickname, @Param(value = "kind") String kind,
                     @Param(value = "title") String title, @Param(value = "contents") String contents);
 }
