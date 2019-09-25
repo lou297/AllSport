@@ -20,25 +20,25 @@ public class MeetingController {
         return meetingList;
     }
 
-    @RequestMapping(path = "/meeting/gameId", method = RequestMethod.GET)
-    public @ResponseBody List<Meeting> findMeetingByGameId(int game_id) {
-        List<Meeting> meetingList = meetingMapper.findMeetingByGameId(game_id);
+    @RequestMapping(path = "/meeting/idContest", method = RequestMethod.GET)
+    public @ResponseBody List<Meeting> findMeetingByContestId(int idContest) {
+        List<Meeting> meetingList = meetingMapper.findMeetingByGameId(idContest);
 
         return meetingList;
     }
 
-    @RequestMapping(path = "/meeting/meetId", method = RequestMethod.GET)
-    public @ResponseBody List<Meeting> findMeetingByMeetId(int meet_id) {
-        List<Meeting> meetingList = meetingMapper.findMeetingByMeetId(meet_id);
+    @RequestMapping(path = "/meeting/idMeeting", method = RequestMethod.GET)
+    public @ResponseBody List<Meeting> findMeetingByMeetId(int idMeeting) {
+        List<Meeting> meetingList = meetingMapper.findMeetingByMeetId(idMeeting);
 
         return  meetingList;
     }
 
     @RequestMapping(path = "/makeMeeting", method = RequestMethod.POST)
-    public @ResponseBody void makeMeeting(int meet_id, int game_id, String meet_name,
-                                           int now_count, int max_count, String location,
+    public @ResponseBody void makeMeeting(int idMeeting, int idContest, String meet_name,
+                                           int meet_nowcount, int meet_maxcount, String meet_location,
                                            String meet_contents) {
-        meetingMapper.makeMeeting(meet_id, game_id, meet_name, now_count, max_count, location, meet_contents);
+        meetingMapper.makeMeeting(idMeeting, idContest, meet_name, meet_nowcount, meet_maxcount, meet_location, meet_contents);
 
     }
 

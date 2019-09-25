@@ -6,10 +6,11 @@ import java.util.List;
 
 interface MeetingMapper {
     List<Meeting> getAllMeeting();
-    List<Meeting> findMeetingByGameId(int game_id);
-    List<Meeting> findMeetingByMeetId(int meet_id);
-    void makeMeeting(@Param(value = "meet_id") int meet_id, @Param(value = "game_id") int game_id,
-                     @Param(value = "meet_name") String meet_name, @Param(value = "now_count") int now_count,
-                     @Param(value = "max_count") int max_count, @Param(value = "meet_contents") String location, String meet_contents);
+    List<Meeting> findMeetingByGameId(int idContest);
+    List<Meeting> findMeetingByMeetId(int idMeeting);
+    void makeMeeting(@Param(value = "idMeeting") int idMeeting, @Param(value = "idContest") int idContest,
+                     @Param(value = "meet_name") String meet_name, @Param(value = "meet_nowcount") int meet_nowcount,
+                     @Param(value = "meet_maxcount") int meet_maxcount, @Param(value = "meet_contents") String location,
+                     @Param(value = "meet_contents") String meet_contents);
 
 }

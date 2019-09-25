@@ -12,11 +12,11 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 public class Meeting {
     @Id
-    private int meet_id;
-    private int game_id;
+    private int idMeeting;
+    private int idContest;
     private String meet_name;
-    private int now_count;
-    private int max_count;
-    private String location;
+    private int meet_nowcount;
+    private int meet_maxcount;
+    private String meet_location;
     private String meet_contents;
 }

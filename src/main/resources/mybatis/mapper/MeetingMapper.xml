@@ -10,15 +10,15 @@
     </select>
 
     <select id="findMeetingByGameId" parameterType="int" resultType="com.teamSupport.allSport.Meeting.Meeting">
-        SELECT * FROM meeting WHERE game_id = #{game_id}
+        SELECT * FROM meeting WHERE idContest = #{idContest}
     </select>
 
     <select id="findMeetingByMeetId" parameterType="int" resultType="com.teamSupport.allSport.Meeting.Meeting">
-        SELECT * FROM meeting WHERE meet_id = #{meet_id}
+        SELECT * FROM meeting WHERE idMeeting = #{idMeeting}
     </select>
 
     <insert id="makeMeeting">
-        INSERT INTO meeting VALUES(#{meet_id}, #{game_id}, #{meet_name}, #{now_count}, #{max_count}, #{location}, #{meet_contents})
+        INSERT INTO meeting VALUES(#{idMeeting}, #{idContest}, #{meet_name}, #{meet_nowcount}, #{meet_maxcount}, #{meet_location}, #{meet_contents})
     </insert>
 
 </mapper>
